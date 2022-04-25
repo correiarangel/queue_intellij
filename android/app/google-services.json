@@ -1,0 +1,82 @@
+{
+  "project_info": {
+    "project_number": "301652351916",
+    "project_id": "queu-intellij",
+    "storage_bucket": "queu-intellij.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:301652351916:android:2c007fa288751d214bf809",
+        "android_client_info": {
+          "package_name": "br.com.rangeldev.queue_intellij"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "301652351916-qvk007de0k0glrepg6qergptc91t4qpm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAJqIP6kiUokdXpQjbMyKwK7qO_thz42Ao"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "301652351916-qvk007de0k0glrepg6qergptc91t4qpm.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "301652351916-4gi33d9989he9cf0n85lj2j8b1tvplrt.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "br.com.rangeldev.queue"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:301652351916:android:73cd146b440767e64bf809",
+        "android_client_info": {
+          "package_name": "com.example.queue_intellij"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "301652351916-qvk007de0k0glrepg6qergptc91t4qpm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAJqIP6kiUokdXpQjbMyKwK7qO_thz42Ao"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "301652351916-qvk007de0k0glrepg6qergptc91t4qpm.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "301652351916-4gi33d9989he9cf0n85lj2j8b1tvplrt.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "br.com.rangeldev.queue"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
