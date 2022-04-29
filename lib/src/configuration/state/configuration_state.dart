@@ -12,4 +12,8 @@ class LoadedConfigurationState implements ConfigurationState {
   LoadedConfigurationState(this.queues);
 }
 
-class ExceptionConfigurationState implements ConfigurationState {}
+class ExceptionConfigurationState implements ConfigurationState {
+  final String mensage;
+
+  ExceptionConfigurationState(this.mensage);
+}

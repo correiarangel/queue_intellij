@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:queue_intellij/src/configuration/components/add_dailog.dart';
-import 'package:queue_intellij/src/configuration/components/remove_dailog.dart';
+import 'package:queue_intellij/src/configuration/components/remove_all_orders_dailog.dart';
+import 'package:queue_intellij/src/configuration/components/remove_queue_dailog.dart';
 import 'package:queue_intellij/src/configuration/model/queue_model.dart';
-import 'package:queue_intellij/src/configuration/state/configuration_event.dart';
+import 'package:queue_intellij/src/configuration/event/configuration_event.dart';
 import '../blocs/configuration_bloc.dart';
 import '../state/configuration_state.dart';
 
@@ -33,7 +34,14 @@ class _ConfigurationPageState extends State<ConfigurationPage> {
   void _removeQueeuDialog(QueueModel queueModel) {
     showDialog(
       context: context,
-      builder: (context) => RemoveDailog(queueModel: queueModel),
+      builder: (context) => RemoveQueueDailog(queueModel: queueModel),
+    );
+  }
+
+  void _removeAllOrdersDialog() {
+    showDialog(
+      context: context,
+      builder: (context) => const RemoveAllOrdersDailog(),
     );
   }
 
@@ -133,7 +141,7 @@ class _ConfigurationPageState extends State<ConfigurationPage> {
             style: ElevatedButton.styleFrom(
               primary: Colors.black,
             ),
-            onPressed: () {},
+            onPressed: () => _removeAllOrdersDialog() ,
             child: const Text(
               'REINICIAR FILA',
               style: TextStyle(

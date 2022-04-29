@@ -50,6 +50,40 @@ void main() {
       expect(queries.docs.first.data().containsKey('id'), false);
     },
   );
+
+  test(
+    'Deve remover a propriedade orders de todas os documentos...',
+    () async {
+      await firestore.collection('queue').add(map);
+      await firestore.collection('queue').add(map2);
+      await datasouce.removeAllOrders();
+
+      final ref = firestore.collection('queue');
+      final queries = await ref.get();
+
+      expect(queries.docs.first.data().containsKey('orders'), false);
+      expect(queries.docs.last.data().containsKey('orders'), false);
+      expect(queries.docs.first['title'], 'title');
+      expect(queries.docs.last['title'], 'title 2');
+    },
+  );
+
+  test(
+    'Deve atulisar  propriedade orders de queueEnpitity...',
+    () async {
+     
+      await datasouce.addQueue(map);
+      await datasouce.addQueue(map2);
+      await datasouce.updateQueue(mapUpdate);
+
+      final ref = firestore.collection('queue');
+      final queries = await ref.doc('123rewer2').get();
+
+      expect((queries.data()?['orders'] as List ).length,1 );
+      expect(queries.data()?['title'], 'title 2');
+      expect(queries.data()?['priority'],2);
+    },
+  );
 }
 
 final Map<String, dynamic> dataMap = {
@@ -73,4 +107,27 @@ final Map<String, dynamic> map = {
   'abbreviation': 'ID',
   'priority': 1,
   'orders': []
+};
+
+final Map<String, dynamic> map2 = {
+  'id': '123rewer2',
+  'title': 'title 2',
+  'abbreviation': 'TT',
+  'priority': 2,
+  'orders': []
+};
+
+final Map<String, dynamic> mapUpdate = {
+  'id': '123rewer2',
+  'title': 'title 2',
+  'abbreviation': 'TT',
+  'priority': 2,
+  'orders': [
+    {
+      'id': '0001',
+      'position': 1,
+      'status': 'attending',
+      'timestamp': '2022-04-29 15:55:25',
+    }
+  ]
 };

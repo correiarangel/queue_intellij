@@ -1,14 +1,14 @@
 import '../entities/queue_entities.dart';
 import '../repositories/queue_repository_interface.dart';
 
-abstract class IGetAllQueues {
+abstract class IGetAllQueuesUsecase {
   Stream<List<QueeuEntity>> call();
 }
 
-class GetAllQueues implements IGetAllQueues {
+class GetAllQueuesUsecase implements IGetAllQueuesUsecase {
   final IQueueRepository repository;
 
-  GetAllQueues(this.repository);
+  GetAllQueuesUsecase(this.repository);
   @override
   Stream<List<QueeuEntity>> call() {
     return repository.getAllQueues();

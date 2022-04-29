@@ -3,11 +3,11 @@ import 'package:provider/provider.dart';
 
 import '../blocs/configuration_bloc.dart';
 import '../model/queue_model.dart';
-import '../state/configuration_event.dart';
+import '../event/configuration_event.dart';
 
-class RemoveDailog extends StatelessWidget {
+class RemoveQueueDailog extends StatelessWidget {
   final QueueModel queueModel;
-  const RemoveDailog({
+  const RemoveQueueDailog({
     Key? key,
     required this.queueModel,
   }) : super(key: key);

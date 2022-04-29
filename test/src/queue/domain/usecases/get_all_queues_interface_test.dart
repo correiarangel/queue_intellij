@@ -4,7 +4,7 @@ import 'package:mocktail/mocktail.dart';
 import 'package:queue_intellij/src/queue/domain/entities/queue_entities.dart';
 import 'package:queue_intellij/src/queue/domain/repositories/queue_repository_interface.dart';
 
-import 'package:queue_intellij/src/queue/domain/usecases/get_all_queues.dart';
+import 'package:queue_intellij/src/queue/domain/usecases/get_all_queues_usecase.dart';
 
 import '../../../mocks/mocks.dart';
 
@@ -16,7 +16,7 @@ void main() {
   });
   setUp(() {
     debugPrint('Iniciando testes ...');
-    repository = QueueRepositoryMock();
+    repository = IQueueRepositoryMock();
     entity = QueueEntityMock();
   });
   tearDown(() {
@@ -30,7 +30,7 @@ void main() {
     when(() => repository.getAllQueues()).thenAnswer(
       (_) => Stream.value([entity]),
     );
-    final usecase = GetAllQueues(repository);
+    final usecase = GetAllQueuesUsecase(repository);
     final result = usecase.call();
 
     expect(result, emits(isA<List<QueeuEntity>>()));

@@ -3,7 +3,7 @@ import 'package:provider/provider.dart';
 
 import '../blocs/configuration_bloc.dart';
 import '../model/queue_model.dart';
-import '../state/configuration_event.dart';
+import '../event/configuration_event.dart';
 
 class AddDailog extends StatelessWidget {
   const AddDailog({

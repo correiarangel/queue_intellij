@@ -1,14 +1,14 @@
 import 'package:queue_intellij/src/queue/domain/entities/queue_entities.dart';
 import 'package:queue_intellij/src/queue/domain/repositories/queue_repository_interface.dart';
 
-abstract class IRemoveQueues {
+abstract class IRemoveQueuesUsecase {
   Future<void> call(QueeuEntity queeuEntity);
 }
 
-class RemoveQueues implements IRemoveQueues {
+class RemoveQueuesUsecase implements IRemoveQueuesUsecase {
   final IQueueRepository repository;
 
-  RemoveQueues(this.repository);
+  RemoveQueuesUsecase(this.repository);
 
   @override
   Future<void> call(QueeuEntity queeuEntity) async {

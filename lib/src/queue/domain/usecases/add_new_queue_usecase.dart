@@ -1,14 +1,14 @@
 import 'package:queue_intellij/src/queue/domain/entities/queue_entities.dart';
 import 'package:queue_intellij/src/queue/domain/repositories/queue_repository_interface.dart';
 
-abstract class IAddNewQueus {
+abstract class IAddNewQueueUsecase {
   Future<void> call(QueeuEntity queue);
 }
 
-class AddNewQueue implements IAddNewQueus {
+class AddNewQueueUsecase implements IAddNewQueueUsecase {
   final IQueueRepository repository;
 
-  AddNewQueue(this.repository);
+  AddNewQueueUsecase(this.repository);
 
   @override
   Future<void> call(QueeuEntity queue) async {

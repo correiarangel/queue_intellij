@@ -2,7 +2,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:queue_intellij/src/queue/domain/repositories/queue_repository_interface.dart';
-import 'package:queue_intellij/src/queue/domain/usecases/add_new_queue.dart';
+import 'package:queue_intellij/src/queue/domain/usecases/add_new_queue_usecase.dart';
 
 import '../../../mocks/mocks.dart';
 
@@ -14,7 +14,7 @@ void main() {
   });
   setUp(() {
     debugPrint('Iniciando testes ...');
-    repository = QueueRepositoryMock();
+    repository = IQueueRepositoryMock();
     enptity = QueueEntityMock();
   });
   tearDown(() {
@@ -28,7 +28,7 @@ void main() {
     when(() => repository.addQueue(enptity))
         // ignore: void_checks
         .thenAnswer((invocation) => Future.value(enptity));
-    final usercase = AddNewQueue(repository);
+    final usercase = AddNewQueueUsecase(repository);
 
     expect(usercase.call(enptity), completes);
   });
